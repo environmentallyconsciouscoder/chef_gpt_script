@@ -11,19 +11,19 @@ messages = [
 
 user_contents = input("What can I help you with? dish, recipe or review :\n")
 if user_contents == "dish":
-""" Creates a dish from user's input """
+  """ Creates a dish from user's input """
   ingredients = input("What ingredients do you have? :\n")
   messages.append(
       {
           "role":"user",
-          "content": f"Suggest a dish name (only) that can be made from these {ingredients}"
+          "content": f"Suggest a dish that can be made from these {ingredients}"
       }
   )
 
   messages.append(
         {
              "role": "system",
-             "content": "Your client is going to give a list of ingredients, if there is only 1 ingredient, ask the user to try again",
+             "content": "Your client is going to give a list of ingredients, if there is only 1 ingredient, ask the user to try again. Provide a dish name (only)",
         }
    )
 elif user_contents == "recipe":
@@ -44,7 +44,7 @@ elif user_contents == "recipe":
    )
 
 elif user_contents == "review":
-""" Reviews the users recipe and provides feedback """
+  """ Reviews the users recipe and provides feedback """
   recipe = input("Type what recipe you want to make:\n")
   messages.append(
       {
